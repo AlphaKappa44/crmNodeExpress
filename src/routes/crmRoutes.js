@@ -1,20 +1,20 @@
-// const routes = (app) => {
-//     app.routes('/contact')
-//     .get((req, res) =>
-//         res.send('La requète "GET /contact" est trouvée avec succès!')
-//         )
-//     .post((req, res) =>
-//         res.send('La requète "POST /contact" est envoyée avec succès!')
-//         );
+const express = require('express');
+const router = express.Router();
 
-//     app.routes('/contact/:contactId')
-//     .put((req, res) =>
-//         res.send('La requète "PUT /contact/:contactId" a modifié avec succès!')
-//         )
+router.get('/contact', (req, res) =>
+    res.send('La requète "GET /contact" est trouvée avec succès!')
+    );
 
-//     .delete((req, res) =>
-//         res.send('La requète "DELETE /contact/:contactId" a supprimé avec succès!')
-//         );
-// }
+router.post('/contact', (req, res) =>
+    res.send('La requète "POST /contact" est envoyée avec succès!')
+    );
 
-// module.exports = routes;
+router.put('/contact/:contactId', (req, res) =>
+    res.send('La requète "PUT /contact/:contactId" a modifié avec succès!')
+    )
+
+router.delete('/contact/:contactId', (req, res) =>
+    res.send('La requète "DELETE /contact/:contactId" a supprimé avec succès!')
+    );
+
+module.exports = router;
